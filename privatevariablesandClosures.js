@@ -52,3 +52,30 @@ function multiply(a, b) {
 }
 
 console.log(multiply(3)(3))
+
+// Closure Guessing Game
+function guessingGame(userGuess) {
+
+    let correctAnswer = Math.floor(Math.random() * 11);
+    let guesses = 0;
+    let completed = false;
+
+    return function(guess) {
+        if (!completed) {
+            guesses++;
+            if (guess === correctAnswer) {
+                completed = true;
+                return 'That was the correct answer';
+            } else if (guess > correctAnswer) {
+                return 'You guessed to high.';
+            } else if (guess < correctAnswer) {
+                return 'You guessed to low.';
+            } else if (guesses === guess) {
+                completed = true;
+                return `You have used all of you guesses. The answer was ${correctAnswer}.`;
+            }
+        }
+    }
+}
+
+console.log(guessingGame(5)(5))
