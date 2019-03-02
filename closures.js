@@ -16,10 +16,20 @@ console.log(outterFunction()())
 
 
 function innerFunc(a) {
-
     return function outerFunc(b) {
         return a + b;
     }
 }
 
-console.log(innerFunc(10)(20))
+console.log(innerFunc(10)(20));
+
+// Example of a clusre where only variables used inside of an inner function an
+// outer funtion will be remembered
+function innerF() {
+    let one = "Closure are so cool, ";
+    let two = "I just can't believe it!!!"
+    return function outerF() {
+        return two;
+    }
+}
+console.log(innerF()())
