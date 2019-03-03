@@ -33,3 +33,17 @@ success.then((data) => {
 }).catch((data) => {
     console.log(data);
 })
+
+// Basic Promise With Set Timeout Example
+var random = new Promise((res, rej) => {
+    setTimeout(() => {
+        let result = Math.floor(Math.random() * 11);
+        res(result);
+    }, 4000)
+});
+
+random.then((data) => {
+    console.log(data);
+}).catch(() => {
+    console.log("Unable to recover the random number");
+})
