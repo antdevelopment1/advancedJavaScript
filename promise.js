@@ -47,3 +47,25 @@ random.then((data) => {
 }).catch(() => {
     console.log("Unable to recover the random number");
 })
+
+// Combining Asynchronous tasks inside of a promise
+// Mixing arrow syntax with traditional functions
+var promise = new Promise((res, rej) => {
+    setTimeout(function() {
+        randomNum = Math.floor(Math.random() * 11);
+        res(randomNum);
+    }, 3000);
+});
+promise.then((data) => {
+    console.log("Random number: " + data);
+    return new Promise((res, rej) => {
+        setTimeout(function() {
+            let word = 'Awesome';
+            res(word);
+        },1000);
+    }).then((data) => {
+        console.log(data)
+    }).catch(() => {
+        console.log("There was an error inside the promise chain");
+    })
+});
