@@ -6,3 +6,14 @@ var promise1 = new Promise(function(res, rej) {
 promise1.then(function(data) {
     console.log(data);
 })
+
+// Basic Promise With Error Handeling
+var errorPromise = new Promise((res, rej) => {
+    rej('Error');
+})
+
+errorPromise.then((data) => {
+    console.log(data);
+}).catch((data) => {
+    console.log(data)
+})
