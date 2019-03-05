@@ -5,6 +5,9 @@ function sliceMethod(start, end) {
     let newArr = [];
     
     for (let i = 0; i < arr.length; i++) {
+        if (end === undefined) {
+            end = arr.length;
+        }
         for (let j = start; j < end; j++) {
             if (newArr.indexOf(arr[j]) === -1) {
                 newArr.push(arr[j]);
@@ -14,4 +17,4 @@ function sliceMethod(start, end) {
     return newArr;
 }
 
-console.log(sliceMethod(0,5))
+console.log(sliceMethod(1,3))
