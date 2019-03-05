@@ -74,3 +74,9 @@ divArray.filter(function(val) {
     return val.innerText === "Hello";
 })
 
+
+function logAllArguments(){
+    Array.prototype.slice.call(arguments, logAllArguments.length);
+}
+
+

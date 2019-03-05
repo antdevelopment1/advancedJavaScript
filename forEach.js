@@ -10,7 +10,7 @@ function forEach(arr, callback) {
 };
 
 function doWork(word, index, array) {
-    if(array.length - 1 !== index) {
+    if (array.length - 1 !== index) {
         return result += word + " ";
     } else {
         return result += word + '!!!';
