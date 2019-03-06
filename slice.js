@@ -25,10 +25,7 @@ function sliceMethod(arr, start=0, end=arr.length) {
     let newArr = [];
 
     if (typeof arr === 'number') {
-        let numberArray = arr.toString().split('');
-        numberArray.forEach((number) => {
-            newArr.push(Number(number));
-        })
+        checkIfNum(arr, newArr);
     }
 
     for (let i = start; i < end; i++) {
@@ -38,11 +35,18 @@ function sliceMethod(arr, start=0, end=arr.length) {
     return newArr;
 }
 
+function checkIfNum(arr, newArr) {
+    let numberArray = arr.toString().split('');
+    return numberArray.forEach((number) => {
+        newArr.push(Number(number));
+    })
+}
+
 function arrayFrom(arr, arrCallback) {
     return arrCallback(arr);
 }
 
-console.log(arrayFrom("string",sliceMethod));
+console.log(arrayFrom("howdy",sliceMethod));
 
 
 
